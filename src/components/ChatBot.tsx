@@ -114,6 +114,7 @@ const ChatBot = () => {
         className={`fixed bottom-6 right-6 z-50 bg-primary-600 hover:bg-primary-700 text-white p-4 rounded-full shadow-lg transition-all duration-300 ${
           isOpen ? 'scale-0' : 'scale-100'
         }`}
+        aria-label="Ouvrir le chat"
       >
         <MessageCircle className="h-6 w-6" />
       </button>
@@ -136,6 +137,7 @@ const ChatBot = () => {
           <button
             onClick={() => setIsOpen(false)}
             className="text-white/80 hover:text-white transition-colors"
+            aria-label="Fermer le chat"
           >
             <X className="h-5 w-5" />
           </button>
@@ -213,6 +215,7 @@ const ChatBot = () => {
               onClick={handleSendMessage}
               disabled={!inputText.trim()}
               className="bg-primary-600 hover:bg-primary-700 disabled:bg-gray-300 text-white p-2 rounded-lg transition-colors"
+              aria-label="Envoyer le message"
             >
               <Send className="h-4 w-4" />
             </button>

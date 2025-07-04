@@ -10,6 +10,7 @@
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
+    font-family: 'Inter', system-ui, sans-serif;
   }
   
   html {
@@ -36,6 +37,19 @@
   
   .container-max {
     @apply max-w-7xl mx-auto;
+  }
+
+  /* Fix for background and text colors */
+  .bg-background {
+    @apply bg-gray-50;
+  }
+
+  .text-foreground {
+    @apply text-gray-900;
+  }
+
+  .border-border {
+    @apply border-gray-200;
   }
 }
 

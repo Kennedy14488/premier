@@ -96,6 +96,12 @@ const Products = () => {
     return matchesSearch && matchesCategory;
   });
 
+  const handleProductRequest = (productName: string) => {
+    const message = `Bonjour, je suis intéressé(e) par le produit : ${productName}. Pouvez-vous me donner plus d'informations sur sa disponibilité et son prix ?`;
+    const whatsappUrl = `https://wa.me/${import.meta.env.VITE_WHATSAPP_NUMBER || '22997775522'}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
@@ -210,7 +216,7 @@ const Products = () => {
                       {product.inStock ? 'En stock' : 'Rupture'}
                     </span>
                   </div>
-                  <p className="text-gray-600 text-sm mb-3 line-clamp-2">
+                  <p className="text-gray-600 text-sm mb-3">
                     {product.description}
                   </p>
                   <div className="flex items-center justify-between">
@@ -218,6 +224,7 @@ const Products = () => {
                       {product.price}
                     </span>
                     <button
+                      onClick={() => handleProductRequest(product.name)}
                       disabled={!product.inStock}
                       className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                         product.inStock
