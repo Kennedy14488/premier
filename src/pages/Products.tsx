@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Search, Filter, Pill, Heart, Baby, Leaf, Shield, Eye } from 'lucide-react';
 
 const Products = () => {
