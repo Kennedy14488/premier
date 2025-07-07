@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Shield, Clock, Heart, Users, Award, MapPin, Sparkles, Star, Zap } from 'lucide-react';
+import { ArrowRight, Shield, Clock, Heart, Users, Award, MapPin, Sparkles, Star, Zap, Phone, MessageCircle } from 'lucide-react';
 
 const Home = () => {
   const features = [
