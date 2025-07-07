@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone, MapPin, Clock } from 'lucide-react';
+import { Menu, X, Phone, MapPin, Clock, User } from 'lucide-react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -84,8 +84,15 @@ const Header = () => {
               ))}
             </nav>
 
-            {/* CTA Button */}
-            <div className="hidden md:block">
+            {/* CTA Buttons */}
+            <div className="hidden md:flex items-center space-x-3">
+              <Link
+                to="/account"
+                className="flex items-center space-x-2 text-gray-700 hover:text-primary-600 transition-colors"
+              >
+                <User className="h-5 w-5" />
+                <span>Mon compte</span>
+              </Link>
               <a
                 href={`https://wa.me/${import.meta.env.VITE_WHATSAPP_NUMBER || '22997775522'}`}
                 target="_blank"
@@ -124,6 +131,14 @@ const Header = () => {
                   {item.name}
                 </Link>
               ))}
+              <Link
+                to="/account"
+                onClick={() => setIsMenuOpen(false)}
+                className="flex items-center space-x-2 text-gray-700 hover:text-primary-600 transition-colors"
+              >
+                <User className="h-5 w-5" />
+                <span>Mon compte</span>
+              </Link>
               <a
                 href={`https://wa.me/${import.meta.env.VITE_WHATSAPP_NUMBER || '22997775522'}`}
                 target="_blank"
